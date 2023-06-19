@@ -31,6 +31,7 @@
 /// THE SOFTWARE.
 
 import Foundation
+import SwiftUI
 
 struct Object: Codable, Hashable {
   let objectID: Int
@@ -39,6 +40,7 @@ struct Object: Codable, Hashable {
   let objectURL: String
   let isPublicDomain: Bool
   let primaryImageSmall: String
+  var imageData: Data?
 }
 
 struct ObjectIDs: Codable {

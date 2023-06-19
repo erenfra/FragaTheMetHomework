@@ -66,16 +66,13 @@ struct ContentView: View {
             query = ""
             showQueryField = true
           }
-          .foregroundColor(Color.metBackground)
-          .padding(.horizontal)
-          .background(
-            RoundedRectangle(cornerRadius: 8)
-              .stroke(Color.metBackground, lineWidth: 2))
+        .foregroundColor(Color.metBackground)
+        .padding(.horizontal)
+        .background(
+          RoundedRectangle(cornerRadius: 8)
+            .stroke(Color.metBackground, lineWidth: 2))
         }
-        .alert(
-          "Search the Met",
-          isPresented: $showQueryField,
-          actions: {
+        .alert("Search the Met", isPresented: $showQueryField, actions: {
             TextField("Search the Met", text: $query)
             Button("Search") {
               fetchObjectsTask?.cancel()
@@ -86,7 +83,7 @@ struct ContentView: View {
                 } catch {}
               }
             }
-          })
+        })
         .navigationDestination(for: URL.self) { url in
           SafariView(url: url)
             .navigationBarTitleDisplayMode(.inline)
